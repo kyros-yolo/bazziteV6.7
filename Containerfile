@@ -830,3 +830,5 @@ RUN --mount=type=cache,dst=/var/cache \
     /ctx/finalize
 
 RUN --mount=type=tmpfs,target=/run --network=none bootc container lint
+RUN sed -i 's/NAME="Bazzite"/NAME="GoonerOs"/g' /usr/lib/os-release
+RUN sed -i 's/PRETTY_NAME="Bazzite"/PRETTY_NAME="GoonerOS"/g' /usr/lib/os-release

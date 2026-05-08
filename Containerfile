@@ -832,3 +832,8 @@ RUN --mount=type=cache,dst=/var/cache \
 RUN --mount=type=tmpfs,target=/run --network=none bootc container lint
 RUN sed -i 's/NAME="Bazzite"/NAME="GoonerOs"/g' /usr/lib/os-release
 RUN sed -i 's/PRETTY_NAME="Bazzite"/PRETTY_NAME="GoonerOS"/g' /usr/lib/os-release
+# Ersetzt das Hintergrundbild (Beispiel für KDE)
+COPY custom_files/wallpaper.jpg /usr/share/wallpapers/bazzite.jpg
+
+# Ersetzt das System-Logo
+COPY custom_files/logo.png /usr/share/pixmaps/system-logo.png
